@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marvel Crosshair Pro</title>
-  <!-- Use absolute paths -->
-  <link rel="stylesheet" href="/css/styles.css">
+  <!-- Use relative paths consistently -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/dark-mode.css">
+  <link rel="stylesheet" href="css/crosshair-preview.css">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <meta name="description" content="Marvel character crosshairs with monetized captcha integration">
-  <!-- Add base URL for SPA routing -->
-  <base href="/">
+  <!-- Remove base tag for simpler routing -->
 </head>
 <body>
   <header>
@@ -16,9 +18,9 @@
       <h1>Marvel Crosshair Pro</h1>
       <nav>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/gallery">Gallery</a></li>
-          <li><a href="/about">About</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
         </ul>
       </nav>
     </div>
@@ -54,9 +56,14 @@
     </div>
   </footer>
 
-  <!-- Scripts with absolute paths -->
-  <script src="/js/captcha.js"></script>
-  <script src="/js/captcha-config.js"></script>
-  <script src="/js/main.js"></script>
+  <!-- Scripts with relative paths -->
+  <script src="js/captcha.js"></script>
+  <script src="js/captcha-config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/crosshair-preview.js"></script>
+  <script>
+    // Initialize dark mode
+    document.body.classList.add('dark-mode');
+  </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 /**
- * Captcha configuration and initialization
+ * Captcha configuration for Marvel Crosshair Pro
  */
 
 // Available captcha providers and their configuration
@@ -48,34 +48,96 @@ const AD_PROVIDERS = {
     }
 };
 
-// Initialize captcha on document ready
 document.addEventListener('DOMContentLoaded', function() {
-    // Create captcha instance with optimal revenue settings
-    const captcha = new ProfitableCaptcha({
-        containerId: 'marvel-captcha-container',
-        apiKey: CAPTCHA_PROVIDERS.hCaptcha.apiKey,
-        adProvider: 'AdSense',
-        onSuccess: function(token) {
-            document.getElementById('captcha-status').textContent = 'Verified!';
-            document.getElementById('access-button').disabled = false;
-            
-            // Analytics event
-            if (typeof gtag === 'function') {
-                gtag('event', 'captcha_success', {
-                    'event_category': 'engagement',
-                    'event_label': 'captcha'
-                });
-            }
-        }
-    });
-    
-    // Initialize the captcha
-    captcha.initialize();
-    
-    // Set up revenue dashboard if admin
-    if (isAdmin()) {
-        setupRevenueDashboard(captcha);
+  // Initialize captcha
+  const accessButton = document.getElementById('access-button');
+  const statusText = document.getElementById('captcha-status');
+  
+  if (!window.MarvelCaptcha) {
+    console.error('MarvelCaptcha not loaded!');
+    return;
+  }
+  
+  const captcha = new MarvelCaptcha('marvel-captcha-container', {
+    theme: 'dark', // match our dark theme
+    onSuccess: function() {
+      if (accessButton) {
+        accessButton.disabled = false;
+      }
+      if (statusText) {
+        statusText.textContent = 'Captcha completed. You can now access premium content.';
+        statusText.className = 'success-message';
+      }
+      
+      // Store verification in session
+      sessionStorage.setItem('captchaVerified', 'true');
+      
+      // Show premium content if available
+      showPremiumContent();
+    },
+    onFailure: function() {
+      if (accessButton) {
+        accessButton.disabled = true;
+      }
+      if (statusText) {
+        statusText.textContent = 'Captcha verification failed. Please try again.';
+        statusText.className = 'error-message';
+      }
+    },
+    onExpire: function() {
+      if (accessButton) {
+        accessButton.disabled = true;
+      }
+      if (statusText) {
+        statusText.textContent = 'Captcha expired. Please verify again.';
+      }
+      
+      // Clear verification
+      sessionStorage.removeItem('captchaVerified');
     }
+  });
+  
+  // Check if already verified
+  if (sessionStorage.getItem('captchaVerified') === 'true') {
+    if (accessButton) {
+      accessButton.disabled = false;
+    }
+    if (statusText) {
+      statusText.textContent = 'Already verified. You can access premium content.';
+      statusText.className = 'success-message';
+    }
+    showPremiumContent();
+  }
+  
+  // Access button click handler
+  if (accessButton) {
+    accessButton.addEventListener('click', function() {
+      showPremiumContent();
+    });
+  }
+  
+  function showPremiumContent() {
+    const featuredCrosshairs = document.getElementById('featured-crosshairs');
+    if (featuredCrosshairs) {
+      featuredCrosshairs.innerHTML = `
+        <div class="crosshair-item">
+          <h3>Iron Man Crosshair</h3>
+          <div class="crosshair-preview" data-character="ironman"></div>
+          <button class="download-button">Download</button>
+        </div>
+        <div class="crosshair-item">
+          <h3>Captain America Crosshair</h3>
+          <div class="crosshair-preview" data-character="cap"></div>
+          <button class="download-button">Download</button>
+        </div>
+        <div class="crosshair-item">
+          <h3>Thor Crosshair</h3>
+          <div class="crosshair-preview" data-character="thor"></div>
+          <button class="download-button">Download</button>
+        </div>
+      `;
+    }
+  }
 });
 
 // Check if current user is admin

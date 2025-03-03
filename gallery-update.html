@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - MarvelCrosshair.pro</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/gallery-fix.css">
+  <link rel="stylesheet" href="css/dark-mode.css">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <style>
+    /* Emergency inline fixes */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    
+    .gallery-lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    
+    .gallery-lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Marvel Crosshair Pro</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <main>
+    <h1>Gallery</h1>
+    
+    <div class="gallery-container">
+      <!-- Example of properly structured gallery items -->
+      <div class="gallery-item">
+        <img src="images/gallery/image1.jpg" alt="Crosshair design 1">
+      </div>
+      <div class="gallery-item">
+        <img src="images/gallery/image2.jpg" alt="Crosshair design 2">
+      </div>
+      <!-- Add more gallery items as needed -->
+    </div>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Marvel Crosshair Pro. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script src="js/gallery-fix.js"></script>
+  <script>
+    // Initialize dark mode
+    document.body.classList.add('dark-mode');
+  </script>
+</body>
+</html>

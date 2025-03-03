@@ -1,8 +1,17 @@
 /**
- * Main JavaScript for Marvel Crosshair Pro
+ * Main JavaScript file for Marvel Crosshair Pro
  */
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Highlight current page in navigation
+  highlightCurrentPage();
+
+  // Initialize download buttons
+  initializeDownloadButtons();
+  
+  // Apply dark mode
+  document.body.classList.add('dark-mode');
+  
   // Load featured crosshairs
   loadFeaturedCrosshairs();
   
@@ -16,6 +25,72 @@ document.addEventListener('DOMContentLoaded', function() {
     enableAdminFeatures();
   }
 });
+
+/**
+ * Highlights the current page in the navigation menu
+ */
+function highlightCurrentPage() {
+  const currentPage = window.location.pathname;
+  const navLinks = document.querySelectorAll('nav a');
+  
+  navLinks.forEach(link => {
+    const linkPath = link.getAttribute('href');
+    if (linkPath === currentPage || 
+        (currentPage.endsWith('/') && linkPath === '/index.html') || 
+        (currentPage.includes(linkPath) && linkPath !== '/')) {
+      link.classList.add('active');
+    }
+  });
+}
+
+/**
+ * Initializes download buttons for crosshair items
+ */
+function initializeDownloadButtons() {
+  const downloadButtons = document.querySelectorAll('.download-button');
+  
+  downloadButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const crosshairItem = this.closest('.crosshair-item');
+      if (!crosshairItem) return;
+      
+      const characterElement = crosshairItem.querySelector('.crosshair-preview');
+      if (!characterElement) return;
+      
+      const character = characterElement.getAttribute('data-character');
+      if (!character) return;
+      
+      downloadCrosshair(character);
+    });
+  });
+}
+
+/**
+ * Downloads a crosshair for a specific character
+ */
+function downloadCrosshair(character) {
+  // In a real implementation, this would generate or fetch a crosshair file
+  // For demo purposes, we'll show an alert
+  
+  alert(`Downloading ${character} crosshair...`);
+  
+  // Log download for analytics
+  logDownload(character);
+}
+
+/**
+ * Logs a download for analytics
+ */
+function logDownload(character) {
+  // In a real implementation, this would send analytics data
+  console.log(`Downloaded: ${character} at ${new Date().toISOString()}`);
+  
+  // Update download counter if admin dashboard is present
+  const dashboardElement = document.getElementById('revenue-dashboard');
+  if (dashboardElement && dashboardElement.isConnected) {
+    // This would connect to an admin API in a real implementation
+  }
+}
 
 /**
  * Loads featured crosshairs from the API or local data
@@ -42,6 +117,7 @@ function loadFeaturedCrosshairs() {
       <img src="${character.image}" alt="${character.name} Crosshair">
       <h3>${character.name}</h3>
       <button class="preview-button">Preview</button>
+      <button class="download-button">Download</button>
     `;
     featuredContainer.appendChild(crosshairElement);
   });

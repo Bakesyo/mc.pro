@@ -1,59 +1,30 @@
-# Deployment Checklist for MarvelCrosshair.pro
+# Final Deployment Checklist
 
-## Functionality
-- [ ] All features work as expected
-- [ ] All links are working correctly
-- [ ] Forms submit properly
-- [ ] Error handling is implemented
+## Critical Tasks
+- [ ] Replace placeholder comments in gallery-update.html
+- [ ] Confirm captcha.js, captcha-config.js, and main.js exist and are properly implemented
+- [ ] Test crosshair preview functionality on all pages where needed
+- [ ] Verify dark mode styling works across all website pages
+- [ ] Test gallery lightbox functionality with actual images
+
+## Path Verification
+- [ ] Verify all file paths in HTML files (particularly index.html)
+- [ ] Ensure CSS and JS files are properly linked
+
+## Browser Testing
+- [ ] Test on Chrome
+- [ ] Test on Firefox
+- [ ] Test on Safari
+- [ ] Test on Edge
+- [ ] Verify mobile responsiveness
 
 ## Performance
-- [ ] Images are optimized
-- [ ] CSS is minified
-- [ ] JavaScript is minified
-- [ ] Caching strategy is implemented
-- [ ] Website load time is under 3 seconds
+- [ ] Optimize images
+- [ ] Minify CSS and JS files for production
 
-## Compatibility
-- [ ] Website works on Chrome, Firefox, Safari, Edge
-- [ ] Website is responsive on desktop, tablet, and mobile
-- [ ] Font rendering is consistent across browsers
+## Functionality
+- [ ] Verify the captcha works properly with the new preview feature
+- [ ] Ensure all links work correctly
+- [ ] Test the gallery with multiple images
 
-## Security
-- [ ] HTTPS is enabled
-- [ ] Forms have CSRF protection
-- [ ] Input validation is implemented
-- [ ] Dependencies have no known vulnerabilities
-- [ ] Sensitive data is protected
-
-## SEO
-- [ ] Meta tags are properly set
-- [ ] Sitemap.xml is created and valid
-- [ ] robots.txt is configured
-- [ ] Structured data is implemented where applicable
-- [ ] URLs are SEO-friendly
-
-## Content
-- [ ] All text is free of spelling and grammar errors
-- [ ] All images have alt text
-- [ ] Privacy policy is in place
-- [ ] Terms of service is in place
-- [ ] Contact information is available
-
-## Analytics and Monitoring
-- [ ] Analytics tracking is set up
-- [ ] Error logging is configured
-- [ ] Uptime monitoring is in place
-
-## Before Launch
-- [ ] Favicon is set
-- [ ] 404 page is customized
-- [ ] Backup strategy is in place
-- [ ] Domain and hosting are paid for appropriate term
-
-## Post-Launch
-- [ ] Submit sitemap to search engines
-- [ ] Test contact forms with real submissions
-- [ ] Monitor for 404 errors
-- [ ] Check analytics for any issues
-
-Use this checklist to ensure your MarvelCrosshair.pro website is fully ready for deployment.
+Once all items on this checklist are completed, the site should be ready for final deployment.
