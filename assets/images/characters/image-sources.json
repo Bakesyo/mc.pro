@@ -1,0 +1,34 @@
+{
+  "characters": [
+    {
+      "name": "Iron Man",
+      "filename": "iron-man.png",
+      "source": "https://cdn.marvel.com/characters/iron-man.png",
+      "license": "For development purposes only. Replace with properly licensed images before production."
+    },
+    {
+      "name": "Captain America",
+      "filename": "captain-america.png",
+      "source": "https://cdn.marvel.com/characters/captain-america.png",
+      "license": "For development purposes only. Replace with properly licensed images before production."
+    },
+    {
+      "name": "Thor",
+      "filename": "thor.png",
+      "source": "https://cdn.marvel.com/characters/thor.png",
+      "license": "For development purposes only. Replace with properly licensed images before production."
+    },
+    {
+      "name": "Black Widow",
+      "filename": "black-widow.png",
+      "source": "https://cdn.marvel.com/characters/black-widow.png",
+      "license": "For development purposes only. Replace with properly licensed images before production."
+    },
+    {
+      "name": "Hulk",
+      "filename": "hulk.png",
+      "source": "https://cdn.marvel.com/characters/hulk.png",
+      "license": "For development purposes only. Replace with properly licensed images before production."
+    }
+  ]
+}

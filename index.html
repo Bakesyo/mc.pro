@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marvel Crosshair Pro</title>
+  <!-- Use absolute paths -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <meta name="description" content="Marvel character crosshairs with monetized captcha integration">
+  <!-- Add base URL for SPA routing -->
+  <base href="/">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Marvel Crosshair Pro</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Premium Marvel Character Crosshairs</h2>
+        <p>Access high-quality crosshairs for your favorite Marvel characters</p>
+        <div id="marvel-captcha-container" class="captcha-container"></div>
+        <p id="captcha-status">Please complete the captcha to continue</p>
+        <button id="access-button" disabled>Access Premium Content</button>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2>Featured Crosshairs</h2>
+        <div class="crosshair-grid" id="featured-crosshairs">
+          <!-- Crosshairs will be loaded dynamically -->
+          <div class="crosshair-loading">Loading...</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="revenue-dashboard" class="admin-only"></div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Marvel Crosshair Pro. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts with absolute paths -->
+  <script src="/js/captcha.js"></script>
+  <script src="/js/captcha-config.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

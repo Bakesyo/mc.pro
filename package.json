@@ -1,0 +1,31 @@
+{
+  "name": "marvel-crosshair-pro",
+  "version": "1.0.0",
+  "description": "Marvel character crosshairs with monetized captcha integration",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "optimize-assets": "node scripts/optimize-assets.js",
+    "preview": "vite preview",
+    "postbuild": "node scripts/optimize-assets.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "vite": "^4.3.9",
+    "imagemin": "^8.0.1",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-webp": "^7.0.0",
+    "eslint": "^8.40.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "private": true
+}

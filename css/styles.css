@@ -1,0 +1,146 @@
+/* Main Styles for Marvel Crosshair Pro */
+
+:root {
+  --primary-color: #e23636;
+  --secondary-color: #518cca;
+  --text-color: #333;
+  --background-color: #f5f5f5;
+  --container-width: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 0;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Captcha Container */
+.captcha-container {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 2rem auto;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#captcha-status {
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+#access-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+#access-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Features Section */
+.features {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.features h2 {
+  margin-bottom: 2rem;
+}
+
+.crosshair-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+/* Admin Dashboard */
+.admin-only {
+  display: none;
+  background: white;
+  padding: 20px;
+  margin: 2rem auto;
+  max-width: 800px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Footer */
+footer {
+  background-color: var(--text-color);
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .crosshair-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .crosshair-grid {
+    grid-template-columns: 1fr;
+  }
+}
